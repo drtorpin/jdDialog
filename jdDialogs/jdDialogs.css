@@ -1,0 +1,142 @@
+.jdDialog {
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	position: absolute;
+	margin-top: -100px;
+	margin-left: -150px;	
+	font-family: Arial, sans-serif;
+    background-color:#e0e0e0;
+	vertical-align: middle;
+    z-index:10000;
+	font-size: 16px;
+    border-radius:20px 20px 10px 10px;
+	min-height:100px;	
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);	
+	}		
+.jdHeader {
+	background-color: #273571;
+	color:#ffffff;
+	width:100%;
+	height:40px;
+    border-radius:10px 10px 0px 0px;
+	}
+.jdBody {
+	padding:15px;
+	font-size:16px;
+	}
+	
+.jdModalBg {
+    // opacity: 0.8; 
+    position: fixed; 
+    left: 0; 
+    right: 0; 
+    top: 0; 
+    bottom: 0; 
+    padding: 16px; 
+    background-color: rgba(1, 1, 1, 0.4); 
+    z-index: 100; 
+    overflow: auto;
+	}
+.jdTitle {
+	margin-top:10px;
+	margin-left:15px;
+	font-size: 18px;
+	}	
+.jdLeft {
+	float:left;
+	}
+.jdClose {
+	background-color: #1B5583;
+	color:#ffffff;
+	vertical-align:middle;
+	text-align:center;
+    border-radius: 50%;
+    margin: 7px 7px;
+    border: 0px;
+    line-height: 13px;
+    font-size:30px;
+	width:20px;
+	height:20px;
+	float:right;
+	cursor:pointer;
+	padding:2px;
+	font-weight:100;
+	}
+.jdClose div{
+	margin-top:3px;
+	}	
+.jdClose:hover{
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+	}
+.jdClose:active{
+	filter: alpha(opacity=100);
+	opacity: 1.0;
+	}	
+.jbClr {
+	clear:both;
+	}	
+.jdBttns {	
+	width:100%;
+	text-align:center;
+	}	
+.jdBttns button {	
+	background: none;
+	background-clip: padding-box;
+	display: inline-block;
+	border:solid 1px #e0e0e0;;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-appearance: button;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	padding:5 15 5 15px;	
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+	}
+.jdText {
+	text-align:left;
+	width:100%;
+	font-size: 16px;
+	min-height:20px;
+	}	
+.jdBttns button:hover {
+	border:solid 1px #999;
+	}	
+.jdDialogAlert .jdHeader {
+	background-color: #B10714;
+	color:#ffffff;
+	}
+.jdDialogAlert .jdHeader .jdClose  {
+	background-color: #DD404C;
+	color:#FFEB9D;
+	}	
+.jdDialogConfirm .jdHeader{
+	background-color: #273571;
+	color:#ffffff;
+	}
+.jdDialogConfirm  .jdHeader .jdClose{
+	background-color: #1B5583;
+	color:#ffffff;
+	}
+.jdDialogConfirm2bttn {
+	min-width:380px;
+	max-width:450px;
+	}
+.jdDialogConfirm2bttn .jdText {
+	min-height:60px;
+	}	
+.jdDialogConfirm2bttn .jdHeader{
+	background-color: hsl(115,63%,15%);
+	color:#F0C800;
+	}
+.jdDialogConfirm2bttn .jdHeader .jdClose{
+	background-color: hsl(114,58%,22%);
+	color:#F5DA50;
+	}
+	
