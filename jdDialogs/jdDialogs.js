@@ -57,7 +57,6 @@
 		$('.jdModalBg').detach().fadeIn(10,function() {	
 			var fncdo = $(t).attr('data-fncdo');
 			// очищаем транзитную сессию если отмена
-			// if(value == 0) {
 			if(!value) {
 				methods.jdClear(id);
 				return;
@@ -154,7 +153,7 @@
 		} else if ( typeof method === 'object' || ! method ) {
 		  return methods.init.apply( this, arguments );
 		} else {
-		  $.error( 'Метод с именем ' +  method + ' не существует для jQuery.tooltip' );
+		  $.error( 'Метод с именем ' +  method + ' не существует для jQuery.jdDialogs' );
 		} 
 	  }
  })(jQuery);	
