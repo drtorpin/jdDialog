@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI</title>
+    <!--script src="jdDialogs/jquery-3.2.1.min.js"></script-->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
+	<script src="jdDialogs/jdDialogs.js" type="text/javascript"></script>
+	<link href="jdDialogs/jdDialogs.css" rel="stylesheet" type="text/css" media="screen">	
+
+</head>
+<body>
+	<INPUT type="button" id="test1" value="С двумя кнопками">	
+	<INPUT type="button" id="test2" value="Confirm с вложенным Alert">	
+	<INPUT type="button" id="test3" value="Confirm с вложенным Alert с функцией">	
+	<INPUT type="button" id="test4" value="2 Confirm с вложенным Alert">	
+	<INPUT type="button" id="test5" value="Alert">	
+	
+	<script type="text/javascript">
+	$(document).ready(function(){		
+		
+		$('#test1').click(function() {
+			var project = 'Перепутье';
+			console.log('1');
+			switch($(this).jdDialogs('confirm2bttn',1,['Выберите маршрут',project,'Идти налево','Идти направо'])) {
+				case 0: return;
+				case 1:
+					// обнулить транзитную сессию
+					$(this).jdDialogs('jdClear','#test1');
+					alert('Идём налево');
+				break;
+				case 2:
+					if(!$(this).jdDialogs('cnf',2,['Точно идём направо?',project])) return;
+					$(this).jdDialogs('alert',0,['Идём направо!',project]);
+				break;
+				default:
+				}
+			});
+			
+		$('#test2').click(function() {
+			var project = 'Важное Дело';
+			var cnfrm = $(this).jdDialogs('confirm',1,['Делаем?',project]);			
+			if(!cnfrm) return;
+			if(cnfrm == 1) {
+				if(! $(this).jdDialogs('alert',0,['Дело сделано!',project]) ) return;
+				alert('Код выполнен');
+				}
+			});	
+			
+		$('#test3').click(function() {
+			var project = 'Действие';
+			if($(this).jdDialogs('cnf',1,['Делаем?',project])) {
+				if($(this).jdDialogs('al',0,['Сделано!',project],'answer1')) {
+					alert('Код выполнен!');
+					}
+				}
+			});				
+
+		$('#test4').click(function() {
+			var project = 'Наш проект';
+			if(! $(this).jdDialogs('confirm',1,['Делаем проект?',project]) ) return;
+			if(! $(this).jdDialogs('confirm',2,['Точно делаем проект?',project]) ) return;
+			if(! $(this).jdDialogs('alert',0,['Сделано!',project]) ) return;
+			alert('Код выполнен');
+			});				
+					
+			
+		$('#test5').click(function() {
+			$(this).jdDialogs('alert',0,['Диалоговое окно показано!','Диалоговое окно']);
+			});			
+		});
+	function answer1() {
+		alert('Сработала дополнительная функция');
+		}			
+    </script>   
+</body>
+</html>
